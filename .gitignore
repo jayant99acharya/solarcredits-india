@@ -1,1 +1,7 @@
+target/
+**/target/
+Cargo.lock
 .arbitrum/
+private_key
+*.key
+.DS_Store
