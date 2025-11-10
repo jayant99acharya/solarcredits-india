@@ -1,0 +1,66 @@
+PROJECT STRUCTURE - SolarCredits India
+=====================================
+
+SMART CONTRACT LAYER (Stylus/Rust)
+├── src/lib.rs
+│   ├── Storage: total_supply, balances, allowances
+│   ├── Functions:
+│   │   ├── mint(to, amount) → Deploy carbon credits
+│   │   ├── burn(amount) → Retire credits
+│   │   ├── transfer(to, amount) → P2P transfers
+│   │   ├── approve(spender, amount) → Grant allowances
+│   │   ├── transfer_from(from, to, amount) → Delegated transfers
+│   │   ├── balance_of(account) → Check balance
+│   │   └── total_supply() → Check total tokens
+│   └── Contract Size: 127 bytes (ultra-efficient!)
+
+AI VERIFICATION LAYER (Rust)
+├── backend/src/main.rs
+│   ├── Input: VerificationRequest
+│   │   ├── consumer_id
+│   │   ├── monthly_generation (kWh)
+│   │   ├── monthly_consumption (kWh)
+│   │   └── net_export (kWh)
+│   ├── Process:
+│   │   ├── Anomaly detection (>50k kWh = suspicious)
+│   │   ├── Export ratio validation (<90% normal)
+│   │   ├── Carbon credit calculation (÷100)
+│   │   └── Confidence scoring
+│   └── Output: BillVerification
+│       ├── verification_status (VERIFIED/PENDING)
+│       ├── confidence_score (0-100%)
+│       ├── carbon_credits_earned
+│       └── verification_hash (immutable proof)
+
+FRONTEND LAYER (HTML5/CSS3/JavaScript)
+├── frontend/index.html
+│   ├── Dashboard Section:
+│   │   ├── Monthly generation (420 kWh)
+│   │   ├── Credits earned (4.2)
+│   │   ├── Verification status (95% confidence)
+│   │   ├── Current balance (12.8 tokens)
+│   │   ├── Market price (₹850)
+│   │   └── Portfolio value (₹10,880)
+│   └── Marketplace Section:
+│       ├── Buy/Sell interface
+│       ├── Price feeds (₹800-900 range)
+│       ├── Environmental impact display
+│       └── Web3 wallet integration (future)
+
+DATA FLOW
+=========
+1. User uploads electricity bill + solar data
+2. Backend verification runs (Rust app)
+3. AI validates with 95% confidence
+4. Smart contract mints tokens
+5. Frontend updates dashboard
+6. User can sell on marketplace
+7. Corporate buyer purchases
+8. Credits transferred via blockchain
+
+DEPLOYMENT TARGETS
+==================
+Local: ✅ Complete
+Arbitrum Sepolia: Ready
+Arbitrum Mainnet: Post-hackathon (if funds raised)
+IPFS/Vercel: Frontend deployment ready

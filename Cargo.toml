@@ -1,0 +1,22 @@
+[package]
+name = "solarcredits-india"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+stylus-sdk = { version = "0.10.0-rc.1" }
+
+[profile.release]
+opt-level = 3
+strip = true
+lto = true
+
+[features]
+export-abi = ["stylus-sdk/export-abi"]
+
+[[bin]]
+name = "solarcredits-india"
+path = "src/main.rs"
